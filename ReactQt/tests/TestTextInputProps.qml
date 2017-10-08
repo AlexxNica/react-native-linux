@@ -1,4 +1,3 @@
-
 /**
  * Copyright (c) 2017-present, Status Research and Development GmbH.
  * All rights reserved.
@@ -9,15 +8,18 @@
  *
  */
 
-#ifndef UTILITIES
-#define UTILITIES
+import QtQuick 2.4
+import React 0.1 as React
 
-#include <QString>
+Rectangle {
+    id: root
+    width: 640; height: 480;
 
-namespace utilities {
+    React.RootView {
+        objectName: "rootView"
+        anchors.fill: parent
 
-void registerReactTypes();
-QString normalizeInputEventName(const QString& eventName);
+        moduleName: "TestTextInputProps"
+        codeLocation: "http://localhost:8081/ReactQt/tests/JS/TestTextInputProps.bundle?platform=ubuntu&dev=true"
+    }
 }
-
-#endif // UTILITIES
